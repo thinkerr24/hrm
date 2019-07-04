@@ -3,6 +3,8 @@ package com.rr.hrm.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Employee implements Serializable{
 	private Integer id;
 	private Dept dept;    // 与员工关联的部门
@@ -23,8 +25,7 @@ public class Employee implements Serializable{
 	 form表单中有日期，Spring不知道该如何转换，
 	  要在实体类的日期属性上加@DateTimeFormat(pattern="yyyy-MM-dd")注解 
 	 */
-	// 现在还没有在pom引入Spring，所以先注释起来
-	//@DateTimeFormat(pattern="yyyy-MM-dd")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date birthday;
 	private String race; // 民族
 	private String education; // 学历

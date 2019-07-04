@@ -3,12 +3,13 @@ package com.rr.hrm.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Document implements Serializable {
 	private Integer id;
 	private String title; // 标题
 	private String fileName; // 文件名
-	// 文件，缺Spring依赖，先注释掉
-	//private MultipartFile file;
+	private MultipartFile file;
 	private String remark; // 描述
 	private Date createDate; // 上传时间
 	private User user;  // 上传人
@@ -47,6 +48,12 @@ public class Document implements Serializable {
 	}
 	public void setUser(User user) {
 		this.user = user;
+	}
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 	
 }
